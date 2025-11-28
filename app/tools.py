@@ -1,9 +1,11 @@
-import json
+import json 
 import os
 import numpy as np
 from openai import OpenAI
 from app.config import OPENAI_API_KEY, FLIGHT_API_BASE_URL
 import httpx
+import datetime
+import random
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
@@ -14,7 +16,7 @@ FAQ_PATH = os.path.join(BASE_DIR, "data", "faqs.json")
 with open(FAQ_PATH, "r", encoding="utf-8") as f:
     FAQ_DATA = json.load(f)
 
-# Create embedding using OpenAI
+
 def create_embedding(text: str):
     e = client.embeddings.create(
         model="text-embedding-3-large",
@@ -23,7 +25,6 @@ def create_embedding(text: str):
     return np.array(e.data[0].embedding)
 
 
-# RAG Search
 def rag_search(query: str):
     query_emb = create_embedding(query)
     best_score = -1
@@ -39,10 +40,7 @@ def rag_search(query: str):
             best_score = similarity
             best_answer = faq["answer"]
 
-    if best_score < 0.80:
-        return None
-
-    return best_answer
+    return best_answer if best_score >= 0.80 else None
 
 
 # =======================
@@ -61,16 +59,18 @@ async def search_flights(args: dict):
 
 
 # =======================
-# Flight Booking Tool
+# Flight Booking Tool (Enhanced Arabic + English)
 # =======================
 async def book_flight(args: dict):
-    import random
-    pnr = "PNR-" + str(random.randint(10000, 99999))
+    date_code = datetime.datetime.now().strftime("%d%m%y")
+    pnr = f"FL-{date_code}-{random.randint(10000,99999)}"
 
     return {
         "ticket": {
             "pnr": pnr,
             "flight_id": args["flight_id"],
-            "passenger": args["passenger_name"]
+            "passenger": args["passenger_name"],
+            "booking_date": date_code,
+            "status": "CONFIRMED"
         }
     }
