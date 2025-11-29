@@ -63,7 +63,8 @@ async def search_flights(args: dict):
 # =======================
 async def book_flight(args: dict):
     date_code = datetime.datetime.now().strftime("%d%m%y")
-    pnr = f"FL-{date_code}-{random.randint(10000,99999)}"
+    airline_code = "FL"  
+    pnr = f"{airline_code}-{date_code}-{random.randint(10000, 99999)}"
 
     return {
         "ticket": {
