@@ -2,12 +2,15 @@ import json
 import os
 import numpy as np
 from openai import OpenAI
-from app.config import OPENAI_API_KEY, FLIGHT_API_BASE_URL
+from app.config import OPENAI_API_KEY
 import httpx
 import datetime
 import random
 
 client = OpenAI(api_key=OPENAI_API_KEY)
+
+# Your Azure API Base URL
+FLIGHT_API_BASE_URL = "https://rsk-testing-c5h0hzcaekatdpav.centralindia-01.azurewebsites.net"
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 FAQ_PATH = os.path.join(BASE_DIR, "data", "faqs.json")
@@ -44,7 +47,7 @@ def rag_search(query: str):
 
 
 # =======================
-# Flight Search Tool
+# Flight Search
 # =======================
 async def search_flights(args: dict):
     url = f"{FLIGHT_API_BASE_URL}/flights/search?from={args['from_city']}&to={args['to_city']}"
@@ -59,12 +62,11 @@ async def search_flights(args: dict):
 
 
 # =======================
-# Flight Booking Tool (Enhanced Arabic + English)
+# Flight Booking
 # =======================
 async def book_flight(args: dict):
     date_code = datetime.datetime.now().strftime("%d%m%y")
-    airline_code = "FL"  
-    pnr = f"{airline_code}-{date_code}-{random.randint(10000, 99999)}"
+    pnr = f"FL-{date_code}-{random.randint(10000, 99999)}"
 
     return {
         "ticket": {
