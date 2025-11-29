@@ -2,15 +2,12 @@ import json
 import os
 import numpy as np
 from openai import OpenAI
-from app.config import OPENAI_API_KEY
+from app.config import OPENAI_API_KEY, FLIGHT_API_URL  # <--- IMPORTED CORRECTLY
 import httpx
 import datetime
 import random
 
 client = OpenAI(api_key=OPENAI_API_KEY)
-
-# Your Azure API Base URL
-FLIGHT_API_BASE_URL = "https://rsk-testing-c5h0hzcaekatdpav.centralindia-01.azurewebsites.net"
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 FAQ_PATH = os.path.join(BASE_DIR, "data", "faqs.json")
@@ -47,10 +44,10 @@ def rag_search(query: str):
 
 
 # =======================
-# Flight Search
+# Flight Search Tool
 # =======================
 async def search_flights(args: dict):
-    url = f"{FLIGHT_API_BASE_URL}/flights/search?from={args['from_city']}&to={args['to_city']}"
+    url = f"{FLIGHT_API_URL}/flights/search?from={args['from_city']}&to={args['to_city']}"  # <--- FIXED
 
     async with httpx.AsyncClient() as client:
         response = await client.get(url)
@@ -62,7 +59,7 @@ async def search_flights(args: dict):
 
 
 # =======================
-# Flight Booking
+# Flight Booking Tool
 # =======================
 async def book_flight(args: dict):
     date_code = datetime.datetime.now().strftime("%d%m%y")
