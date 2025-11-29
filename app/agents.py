@@ -6,34 +6,36 @@ import re
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-# Language detection
+
+# Detect language
 def detect_language(text):
     return "ar" if re.search(r"[\u0600-\u06FF]", text) else "en"
 
-# Allowed general messages
+
+# Allowed greeting
 ALLOWED_SMALL_TALK = [
     "hi", "hello", "hey", "thanks", "thank you", "good morning", "good evening",
     "how are you", "how r u", "bye", "ok", "okay", "مرحبا", "شكرا", "السلام عليكم"
 ]
 
-# Block clearly unrelated topics
+
+# Block unrelated topics
 BLOCK_KEYWORDS = [
-    "food", "recipe", "cook", "restaurant", "movie", "film",
-    "song", "music", "politics", "bank", "weather", "football",
-    "cricket", "sports", "math", "history", "science", "salary"
+    "food", "recipe", "restaurant", "movie", "music", "politics", "bank",
+    "football", "sports", "salary", "bitcoin", "weather", "stock", "game",
 ]
+
 
 PERSONA_MESSAGE = """
 You are FLIGHTBOT — a multilingual (English + Arabic) assistant specialized in:
-✈️ Flight search, booking, ticket generation (PNR), baggage rules, refund help,
-airport info, visa guidance, travel support.
+✈️ Flight search, booking, PNR ticket, refund, baggage, airport info, visa help.
 
-🛑 You DO NOT answer general questions like sports, cooking, banking, news, politics, movies, math, or weather.
+🛑 You do NOT answer questions about politics, sports, movies, food, or banking.
 
 🌐 If user speaks Arabic → reply in Arabic.
 🌐 If user speaks English → reply in English.
 
-💡 Be professional, friendly, and informative.
+💡 Always be friendly, short, and professional.
 """
 
 
@@ -41,29 +43,29 @@ async def chatbot_reply(user_message: str, user_id: str):
     lang = detect_language(user_message)
     text = user_message.lower().strip()
 
-    # 1️⃣ Greetings allowed
+    # 1️⃣ Greetings
     if any(g in text for g in ALLOWED_SMALL_TALK):
         return {
-            "answer": "👋 Hello! How can I help you with flights?" if lang == "en" 
+            "answer": "👋 Hello! How can I help you with flights?" if lang=="en"
                       else "👋 مرحباً! كيف يمكنني مساعدتك في حجز الرحلات؟",
             "source": "Greeting"
         }
 
-    # 2️⃣ Block irrelevant queries
+    # 2️⃣ Block unrelated topics
     if any(k in text for k in BLOCK_KEYWORDS):
         return {
-            "answer": "❌ I only assist with flight booking, baggage, refunds, schedules, and travel help."
-                       if lang == "en" else
-                      "❌ يمكنني فقط المساعدة في حجز الرحلات، الأمتعة، الاسترداد، والجداول ودعم السفر.",
+            "answer": "❌ I only assist with flights, booking, refunds, baggage, and travel help."
+                      if lang=="en" else
+                      "❌ يمكنني فقط المساعدة في الرحلات، الحجز، الأمتعة، الاسترداد، ودعم السفر.",
             "source": "Blocked"
         }
 
-    # 3️⃣ RAG for FAQ
+    # 3️⃣ RAG FAQ
     faq_answer = rag_search(user_message)
     if faq_answer:
         return {"answer": faq_answer, "source": "RAG"}
 
-    # 4️⃣ GPT Function Tools
+    # 4️⃣ Tools for GPT
     tools = [
         {
             "type": "function",
@@ -97,7 +99,7 @@ async def chatbot_reply(user_message: str, user_id: str):
         },
     ]
 
-    # 5️⃣ GPT with persona
+    # 5️⃣ Invoke GPT
     completion = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[
@@ -110,7 +112,7 @@ async def chatbot_reply(user_message: str, user_id: str):
 
     msg = completion.choices[0].message
 
-    # 6️⃣ Handle tool calls
+    # 6️⃣ Tool Calls (Flight Search / Ticket Booking)
     if msg.tool_calls:
         tool = msg.tool_calls[0]
         args = json.loads(tool.function.arguments)
@@ -125,7 +127,7 @@ async def chatbot_reply(user_message: str, user_id: str):
             if lang == "ar":
                 return {
                     "answer": f"""
-🎫 **تم تأكيد التذكرة بنجاح**
+🎫 **تم تأكيد حجز التذكرة**
 
 🪪 **رقم الحجز (PNR):** {result['ticket']['pnr']}
 👤 **الراكب:** {result['ticket']['passenger']}
@@ -133,7 +135,7 @@ async def chatbot_reply(user_message: str, user_id: str):
 📆 **تاريخ الإصدار:** {result['ticket']['booking_date']}
 📍 **الحالة:** مؤكد
 
-✈️ سيتم إرسال التذكرة الإلكترونية قريباً.
+📧 سيتم إرسال التذكرة الإلكترونية قريباً.
 """,
                     "source": "Booking"
                 }
@@ -142,16 +144,16 @@ async def chatbot_reply(user_message: str, user_id: str):
                     "answer": f"""
 🎫 **Flight Ticket Confirmed**
 
-🪪 **PNR:** {result['ticket']['pnr']}
-👤 **Passenger:** {result['ticket']['passenger']}
-✈️ **Flight ID:** {result['ticket']['flight_id']}
-📆 **Booking Date:** {result['ticket']['booking_date']}
-📍 **Status:** CONFIRMED
+🪪 PNR: {result['ticket']['pnr']}
+👤 Passenger: {result['ticket']['passenger']}
+✈️ Flight ID: {result['ticket']['flight_id']}
+📆 Booking Date: {result['ticket']['booking_date']}
+📍 Status: CONFIRMED
 
 📧 You will receive the e-ticket shortly.
 """,
                     "source": "Booking"
                 }
 
-    # 7️⃣ Fallback AI Answer
-    return {"answer": msg.content or "I can help you with flights.", "source": "AI"}
+    # 7️⃣ Normal AI Response
+    return {"answer": msg.content or "I can help with flight booking.", "source": "AI"}
