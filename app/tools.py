@@ -1,8 +1,8 @@
-import json 
+import json
 import os
 import numpy as np
 from openai import OpenAI
-from app.config import OPENAI_API_KEY, FLIGHT_API_BASE_URL  # <-- Correct import
+from app.config import OPENAI_API_KEY, FLIGHT_API_BASE_URL
 import httpx
 import datetime
 import random
@@ -17,6 +17,9 @@ with open(FAQ_PATH, "r", encoding="utf-8") as f:
     FAQ_DATA = json.load(f)
 
 
+# ================================
+# 🔹 Create Embedding
+# ================================
 def create_embedding(text: str):
     e = client.embeddings.create(
         model="text-embedding-3-large",
@@ -25,22 +28,40 @@ def create_embedding(text: str):
     return np.array(e.data[0].embedding)
 
 
+# ================================
+# 🔹 Precompute FAQ Embeddings (💡)
+# ================================
+for faq in FAQ_DATA:
+    if "embedding" not in faq:
+        faq["embedding"] = create_embedding(faq["question"])
+
+
+# ================================
+# 🔹 Smart Semantic RAG Search 🚀
+# ================================
 def rag_search(query: str):
     query_emb = create_embedding(query)
+
     best_score = -1
     best_answer = None
 
     for faq in FAQ_DATA:
-        faq_emb = create_embedding(faq["question"])
-        similarity = np.dot(query_emb, faq_emb) / (
-            np.linalg.norm(query_emb) * np.linalg.norm(faq_emb)
+        similarity = np.dot(query_emb, faq["embedding"]) / (
+            np.linalg.norm(query_emb) * np.linalg.norm(faq["embedding"])
         )
 
         if similarity > best_score:
             best_score = similarity
             best_answer = faq["answer"]
 
-    return best_answer if best_score >= 0.80 else None
+    # 🎯 Smart Decision Logic
+    if best_score >= 0.82:
+        return best_answer
+    elif best_score >= 0.72:
+        return best_answer + "\n\nℹ️ This answer is based on closest available information."
+    else:
+        return None
+
 
 
 # =======================
