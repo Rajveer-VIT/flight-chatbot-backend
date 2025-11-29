@@ -1,18 +1,142 @@
 [
   {
+    "question": "How can I book a flight?",
+    "answer": "You can book flights through our website or by contacting customer support."
+  },
+  {
+    "question": "What payment methods are accepted?",
+    "answer": "We accept credit/debit cards, UPI, net banking, PayPal, and wallet payments depending on your region."
+  },
+  {
+    "question": "Can I hold a booking without payment?",
+    "answer": "Yes, some fares allow you to hold a booking for up to 24 hours without payment."
+  },
+  {
     "question": "What is the baggage limit?",
-    "answer": "You can carry 15kg check-in baggage and 7kg cabin baggage."
+    "answer": "Economy passengers are allowed 15–20kg check-in and 7kg cabin baggage depending on route and airline."
+  },
+  {
+    "question": "What items are not allowed in cabin baggage?",
+    "answer": "Sharp objects, flammable items, liquids over 100ml, and certain electronics are prohibited."
+  },
+  {
+    "question": "How do I check-in online?",
+    "answer": "Visit the airline website or app, enter your booking reference and last name to check-in."
+  },
+  {
+    "question": "When does the check-in counter close?",
+    "answer": "Domestic flights close 45 minutes before departure, international flights close 60–75 minutes before departure."
+  },
+  {
+    "question": "How do I reschedule my flight?",
+    "answer": "You can reschedule from the Manage Booking section or contact support. Fare difference and change fee may apply."
+  },
+  {
+    "question": "What is the cancellation policy?",
+    "answer": "Cancellation charges depend on the fare type and time left before departure. Non-refundable fares are not eligible for a refund."
   },
   {
     "question": "What is the refund policy?",
-    "answer": "Refunds are processed within 5–7 business days based on the fare rules."
+    "answer": "Refunds are processed within 5–7 business days for eligible tickets, depending on the payment method."
   },
   {
-    "question": "How can I reschedule my flight?",
-    "answer": "Flights can be rescheduled from the Manage Booking section or via support."
+    "question": "How do I get my ticket invoice?",
+    "answer": "Invoices can be downloaded from the Manage Booking section or emailed on request."
   },
   {
     "question": "Do you offer student discounts?",
-    "answer": "Yes, valid student ID is required at check-in to avail discounts."
+    "answer": "Yes, selected airlines offer student discounts. A valid student ID is required at check-in."
+  },
+  {
+    "question": "Are senior citizen discounts available?",
+    "answer": "Yes, passengers aged 60+ may get discounts by providing valid ID proof."
+  },
+  {
+    "question": "Can I request wheelchair assistance?",
+    "answer": "Yes, wheelchair assistance can be requested at booking or before 48 hours of departure."
+  },
+  {
+    "question": "Can I carry a baby stroller?",
+    "answer": "Yes, baby strollers are allowed free of charge and can be checked in at the gate."
+  },
+  {
+    "question": "What documents are required for international travel?",
+    "answer": "Passport, visa, flight ticket, and any additional documents like travel insurance or COVID certificates."
+  },
+  {
+    "question": "Can I travel if I am pregnant?",
+    "answer": "Pregnant travelers usually need a medical certificate after 28 weeks and are restricted after 36 weeks."
+  },
+  {
+    "question": "Are pets allowed on flights?",
+    "answer": "Yes, pets can travel in cabin or cargo, depending on airline policies. Pet health certificate required."
+  },
+  {
+    "question": "Can I select my seat?",
+    "answer": "Yes, seat selection is available during booking or check-in. Extra charges may apply for preferred seats."
+  },
+  {
+    "question": "How do I add extra baggage?",
+    "answer": "Extra baggage can be purchased online via Manage Booking at a discounted rate than at the airport."
+  },
+  {
+    "question": "What happens if my flight is delayed?",
+    "answer": "Airline provides updates, alternative flights, and in some cases compensation or meal/accommodation vouchers."
+  },
+  {
+    "question": "How can I upgrade to business class?",
+    "answer": "You can upgrade using miles, at check-in, or by contacting support if seats are available."
+  },
+  {
+    "question": "Can I change passenger name after booking?",
+    "answer": "Minor corrections are allowed. Complete name change rarely allowed; may require cancellation and rebooking."
+  },
+  {
+    "question": "What is web check-in?",
+    "answer": "Web check-in lets you confirm your seat and get your boarding pass online before reaching the airport."
+  },
+  {
+    "question": "What is a no-show?",
+    "answer": "If a passenger does not board their flight and has not canceled in time, it is considered a no-show and no refund is provided."
+  },
+  {
+    "question": "How early should I arrive at the airport?",
+    "answer": "Arrive at least 2 hours before domestic flights and 3 hours before international flights."
+  },
+  {
+    "question": "What is PNR number?",
+    "answer": "PNR (Passenger Name Record) is a unique code used to access your booking details."
+  },
+  {
+    "question": "Will I get food on the flight?",
+    "answer": "Complimentary meals are provided on full-service airlines. Low-cost carriers may charge for meals."
+  },
+  {
+    "question": "How to check flight status?",
+    "answer": "You can check status using the airline website, mobile app, or by entering PNR on the flight status page."
+  },
+  {
+    "question": "Can I cancel my ticket after check-in?",
+    "answer": "Once checked-in, cancellation is generally not allowed or may incur a high no-show penalty."
+  },
+  {
+    "question": "What are miles or reward points?",
+    "answer": "Miles are loyalty points earned from flying that can be used for flight booking, upgrades, or extra services."
+  },
+  {
+    "question": "How do I request meal preference?",
+    "answer": "Meal preferences like vegetarian, Jain, or diabetic meals can be selected during booking or up to 24 hours before departure."
+  },
+  {
+    "question": "What is the difference between direct, non-stop, and connecting flights?",
+    "answer": "Non-stop flights have no stops, direct flights may stop but no aircraft change, connecting flights require aircraft change."
+  },
+  {
+    "question": "How to apply promo codes?",
+    "answer": "Enter promo code on the payment page during booking to get discounts where applicable."
+  },
+  {
+    "question": "Are COVID test or vaccination certificates required?",
+    "answer": "Depends on destination and travel rules. Always check latest travel advisories."
   }
 ]
