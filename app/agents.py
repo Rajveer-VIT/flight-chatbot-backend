@@ -6,7 +6,6 @@ import re
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-
 def detect_language(text):
     return "ar" if re.search(r"[\u0600-\u06FF]", text) else "en"
 
@@ -16,12 +15,10 @@ ALLOWED_SMALL_TALK = [
     "how are you", "how r u", "bye", "ok", "okay", "مرحبا", "شكرا", "السلام عليكم"
 ]
 
-
 BLOCK_KEYWORDS = [
     "food", "recipe", "restaurant", "movie", "music", "politics", "bank",
     "football", "sports", "salary", "bitcoin", "weather", "stock", "game",
 ]
-
 
 PERSONA_MESSAGE = """
 You are FLIGHTBOT — a multilingual (English + Arabic) assistant specialized in:
