@@ -6,15 +6,12 @@ from app.config import OPENAI_API_KEY, FLIGHT_API_BASE_URL
 import httpx
 import datetime
 import random
+import re
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 FAQ_PATH = os.path.join(BASE_DIR, "data", "faqs.json")
-
-# Load FAQ data
-with open(FAQ_PATH, "r", encoding="utf-8") as f:
-    FAQ_DATA = json.load(f)
 
 
 # ================================
@@ -28,40 +25,57 @@ def create_embedding(text: str):
     return np.array(e.data[0].embedding)
 
 
+# Load FAQ
+with open(FAQ_PATH, "r", encoding="utf-8") as f:
+    FAQ_DATA = json.load(f)
+
+
 # ================================
-# 🔹 Precompute FAQ Embeddings (💡)
+# 🔹 Precompute Embeddings for EN & AR
 # ================================
 for faq in FAQ_DATA:
-    if "embedding" not in faq:
-        faq["embedding"] = create_embedding(faq["question"])
+    if "embedding_en" not in faq:
+        faq["embedding_en"] = create_embedding(faq["question_EN"])
+    if "embedding_ar" not in faq:
+        faq["embedding_ar"] = create_embedding(faq["question_AR"])
 
 
 # ================================
-# 🔹 Smart Semantic RAG Search 🚀
+# 🔹 Detect Language (Simple Arabic Check)
+# ================================
+def detect_language(text):
+    if re.search("[\u0600-\u06FF]", text):
+        return "ar"
+    return "en"
+
+
+# ================================
+# 🔹 Smart RAG Search (EN/AR Auto)
 # ================================
 def rag_search(query: str):
+    lang = detect_language(query)
     query_emb = create_embedding(query)
 
     best_score = -1
     best_answer = None
 
     for faq in FAQ_DATA:
-        similarity = np.dot(query_emb, faq["embedding"]) / (
-            np.linalg.norm(query_emb) * np.linalg.norm(faq["embedding"])
+        faq_emb = faq["embedding_ar"] if lang == "ar" else faq["embedding_en"]
+
+        similarity = np.dot(query_emb, faq_emb) / (
+            np.linalg.norm(query_emb) * np.linalg.norm(faq_emb)
         )
 
         if similarity > best_score:
             best_score = similarity
-            best_answer = faq["answer"]
+            best_answer = faq["answer_AR"] if lang == "ar" else faq["answer_EN"]
 
-    # 🎯 Smart Decision Logic
-    if best_score >= 0.82:
+    if best_score >= 0.80:
         return best_answer
-    elif best_score >= 0.72:
-        return best_answer + "\n\nℹ️ This answer is based on closest available information."
+    elif best_score >= 0.70:
+        return best_answer + ("\n\nℹ️ هذا أقرب جواب متاح." if lang == "ar" else "\n\nℹ️ This answer is based on closest available information.")
     else:
         return None
-
 
 
 # =======================
