@@ -1,142 +1,494 @@
 [
   {
-    "question": "How can I book a flight?",
-    "answer": "You can book flights through our website or by contacting customer support."
+    "question_EN": "How can I book a flight?",
+    "answer_EN": "You can book flights through our website, mobile app, or by contacting customer support.",
+    "question_AR": "كيف يمكنني حجز رحلة طيران؟",
+    "answer_AR": "يمكنك حجز الرحلات من خلال موقعنا الإلكتروني، التطبيق أو عبر التواصل مع دعم العملاء."
   },
   {
-    "question": "What payment methods are accepted?",
-    "answer": "We accept credit/debit cards, UPI, net banking, PayPal, and wallet payments depending on your region."
+    "question_EN": "What payment methods are accepted?",
+    "answer_EN": "We accept credit/debit cards, UPI, net banking, PayPal, and wallet payments depending on your region.",
+    "question_AR": "ما هي طرق الدفع المقبولة؟",
+    "answer_AR": "نقبل بطاقات الائتمان والخصم، UPI، التحويل البنكي، PayPal وطرق الدفع الإلكترونية حسب منطقتك."
   },
   {
-    "question": "Can I hold a booking without payment?",
-    "answer": "Yes, some fares allow you to hold a booking for up to 24 hours without payment."
+    "question_EN": "Can I hold a booking without payment?",
+    "answer_EN": "Yes, some fares allow you to hold a booking for up to 24 hours without payment.",
+    "question_AR": "هل يمكنني حجز التذكرة بدون دفع؟",
+    "answer_AR": "نعم، بعض الأسعار تتيح حجز التذكرة لمدة تصل إلى 24 ساعة بدون دفع."
   },
   {
-    "question": "What is the baggage limit?",
-    "answer": "Economy passengers are allowed 15–20kg check-in and 7kg cabin baggage depending on route and airline."
+    "question_EN": "How do I cancel my flight ticket?",
+    "answer_EN": "You can cancel your ticket online via Manage Booking or by contacting customer support.",
+    "question_AR": "كيف يمكنني إلغاء تذكرتي؟",
+    "answer_AR": "يمكنك إلغاء التذكرة عبر الإنترنت من خلال إدارة الحجز أو عبر دعم العملاء."
   },
   {
-    "question": "What items are not allowed in cabin baggage?",
-    "answer": "Sharp objects, flammable items, liquids over 100ml, and certain electronics are prohibited."
+    "question_EN": "What is the baggage limit?",
+    "answer_EN": "Economy passengers are allowed 15–20kg check-in and 7kg cabin baggage depending on route and airline.",
+    "question_AR": "ما هو وزن الأمتعة المسموح به؟",
+    "answer_AR": "يسمح بـ 15-20 كجم للأمتعة المشحونة و7 كجم لأمتعة اليد حسب الوجهة وشركة الطيران."
   },
   {
-    "question": "How do I check-in online?",
-    "answer": "Visit the airline website or app, enter your booking reference and last name to check-in."
+    "question_EN": "How do I add extra baggage?",
+    "answer_EN": "You can purchase extra baggage online through Manage Booking at discounted rates.",
+    "question_AR": "كيف يمكنني إضافة أمتعة إضافية؟",
+    "answer_AR": "يمكنك شراء أمتعة إضافية عبر إدارة الحجز على الإنترنت بسعر مخفض."
   },
   {
-    "question": "When does the check-in counter close?",
-    "answer": "Domestic flights close 45 minutes before departure, international flights close 60–75 minutes before departure."
+    "question_EN": "Can I carry electronic devices in cabin baggage?",
+    "answer_EN": "Yes, laptops, tablets, and mobile phones are allowed in cabin baggage.",
+    "question_AR": "هل يمكنني حمل الأجهزة الإلكترونية في حقيبة اليد؟",
+    "answer_AR": "نعم، يمكن حمل اللابتوب، التابلت والهواتف المحمولة في حقيبة اليد."
   },
   {
-    "question": "How do I reschedule my flight?",
-    "answer": "You can reschedule from the Manage Booking section or contact support. Fare difference and change fee may apply."
+    "question_EN": "What items are prohibited in check-in baggage?",
+    "answer_EN": "Explosives, flammable liquids, and restricted chemicals are prohibited in check-in baggage.",
+    "question_AR": "ما هي الأشياء الممنوعة في الأمتعة المشحونة؟",
+    "answer_AR": "المتفجرات، السوائل القابلة للاشتعال، والمواد الكيميائية الممنوعة غير مسموح بها."
   },
   {
-    "question": "What is the cancellation policy?",
-    "answer": "Cancellation charges depend on the fare type and time left before departure. Non-refundable fares are not eligible for a refund."
+    "question_EN": "How can I check flight status?",
+    "answer_EN": "You can check flight status using the airline website, mobile app, or by entering your PNR number.",
+    "question_AR": "كيف يمكنني معرفة حالة رحلتي؟",
+    "answer_AR": "يمكنك التحقق من حالة الرحلة عبر موقع شركة الطيران أو التطبيق أو بإدخال رقم الحجز (PNR)."
   },
   {
-    "question": "What is the refund policy?",
-    "answer": "Refunds are processed within 5–7 business days for eligible tickets, depending on the payment method."
+    "question_EN": "What is PNR number?",
+    "answer_EN": "PNR (Passenger Name Record) is a unique code that helps you access your booking details.",
+    "question_AR": "ما هو رقم PNR؟",
+    "answer_AR": "رقم PNR هو رمز فريد يساعدك في الوصول إلى تفاصيل الحجز الخاصة بك."
   },
   {
-    "question": "How do I get my ticket invoice?",
-    "answer": "Invoices can be downloaded from the Manage Booking section or emailed on request."
+    "question_EN": "Can I reschedule my flight?",
+    "answer_EN": "Yes, you can modify your travel date through the Manage Booking section.",
+    "question_AR": "هل يمكنني تغيير موعد رحلتي؟",
+    "answer_AR": "نعم، يمكنك تعديل موعد رحلتك من خلال قسم إدارة الحجز."
   },
   {
-    "question": "Do you offer student discounts?",
-    "answer": "Yes, selected airlines offer student discounts. A valid student ID is required at check-in."
+    "question_EN": "Can I change my seat after booking?",
+    "answer_EN": "Yes, seat selection is available during check-in or through Manage Booking.",
+    "question_AR": "هل يمكنني تغيير مقعدي بعد الحجز؟",
+    "answer_AR": "نعم، يمكن اختيار أو تغيير المقعد أثناء تسجيل الوصول أو من خلال إدارة الحجز."
   },
   {
-    "question": "Are senior citizen discounts available?",
-    "answer": "Yes, passengers aged 60+ may get discounts by providing valid ID proof."
+    "question_EN": "How do I check-in online?",
+    "answer_EN": "Visit the airline website or app and enter your booking reference for web check-in.",
+    "question_AR": "كيف أقوم بتسجيل الدخول عبر الإنترنت؟",
+    "answer_AR": "قم بزيارة موقع أو تطبيق شركة الطيران وأدخل رقم الحجز لتسجيل الوصول عبر الإنترنت."
   },
   {
-    "question": "Can I request wheelchair assistance?",
-    "answer": "Yes, wheelchair assistance can be requested at booking or before 48 hours of departure."
+    "question_EN": "What documents are required for international travel?",
+    "answer_EN": "Passport, visa, flight ticket, and sometimes travel insurance or health documents.",
+    "question_AR": "ما هي الوثائق المطلوبة للسفر الدولي؟",
+    "answer_AR": "جواز سفر، تأشيرة، تذكرة الطيران، وأحيانًا تأمين سفر أو وثائق صحية."
   },
   {
-    "question": "Can I carry a baby stroller?",
-    "answer": "Yes, baby strollers are allowed free of charge and can be checked in at the gate."
+    "question_EN": "Do I need a visa for international flights?",
+    "answer_EN": "Visa requirements depend on your nationality and destination country.",
+    "question_AR": "هل أحتاج إلى تأشيرة للسفر الدولي؟",
+    "answer_AR": "تعتمد متطلبات التأشيرة على جنسيتك وبلد الوجهة."
   },
   {
-    "question": "What documents are required for international travel?",
-    "answer": "Passport, visa, flight ticket, and any additional documents like travel insurance or COVID certificates."
+    "question_EN": "How early should I reach the airport?",
+    "answer_EN": "2 hours before domestic flights and 3 hours before international flights.",
+    "question_AR": "متى يجب أن أصل إلى المطار؟",
+    "answer_AR": "ساعتان قبل الرحلات الداخلية وثلاث ساعات قبل الرحلات الدولية."
   },
   {
-    "question": "Can I travel if I am pregnant?",
-    "answer": "Pregnant travelers usually need a medical certificate after 28 weeks and are restricted after 36 weeks."
+    "question_EN": "Can I travel if I am pregnant?",
+    "answer_EN": "Yes, but you may need a medical certificate after 28 weeks of pregnancy.",
+    "question_AR": "هل يمكنني السفر أثناء الحمل؟",
+    "answer_AR": "نعم، لكن قد تحتاج إلى شهادة طبية بعد الأسبوع الـ28 من الحمل."
   },
   {
-    "question": "Are pets allowed on flights?",
-    "answer": "Yes, pets can travel in cabin or cargo, depending on airline policies. Pet health certificate required."
+    "question_EN": "Can I travel with infants?",
+    "answer_EN": "Yes, infants must be at least 7 days old and accompanied by an adult.",
+    "question_AR": "هل يمكنني السفر مع الرضيع؟",
+    "answer_AR": "نعم، يجب أن يكون عمر الرضيع 7 أيام على الأقل ومرافقته من قبل شخص بالغ."
   },
   {
-    "question": "Can I select my seat?",
-    "answer": "Yes, seat selection is available during booking or check-in. Extra charges may apply for preferred seats."
+    "question_EN": "Can I carry a baby stroller?",
+    "answer_EN": "Baby strollers are allowed for free and can be checked in at the gate.",
+    "question_AR": "هل يمكنني حمل عربة الأطفال؟",
+    "answer_AR": "نعم، يُسمح بعربة الأطفال مجانًا ويمكن تسليمها عند البوابة."
   },
   {
-    "question": "How do I add extra baggage?",
-    "answer": "Extra baggage can be purchased online via Manage Booking at a discounted rate than at the airport."
+    "question_EN": "Are pets allowed on flights?",
+    "answer_EN": "Most airlines allow pets in cabin or cargo with proper documentation.",
+    "question_AR": "هل يُسمح بالحيوانات الأليفة على الرحلات؟",
+    "answer_AR": "معظم شركات الطيران تسمح بالحيوانات الأليفة في المقصورة أو الشحن مع الوثائق اللازمة."
   },
   {
-    "question": "What happens if my flight is delayed?",
-    "answer": "Airline provides updates, alternative flights, and in some cases compensation or meal/accommodation vouchers."
+    "question_EN": "Can I take my medicines on board?",
+    "answer_EN": "Yes, but keep prescription and place them in cabin baggage.",
+    "question_AR": "هل يمكنني حمل الأدوية على متن الطائرة؟",
+    "answer_AR": "نعم، لكن احتفظ بالوصفة الطبية وضع الأدوية في حقيبة اليد."
   },
   {
-    "question": "How can I upgrade to business class?",
-    "answer": "You can upgrade using miles, at check-in, or by contacting support if seats are available."
+    "question_EN": "How do I request wheelchair assistance?",
+    "answer_EN": "You can request wheelchair support while booking or at least 48 hours before departure.",
+    "question_AR": "كيف يمكنني طلب كرسي متحرك؟",
+    "answer_AR": "يمكنك طلب المساعدة على الكرسي المتحرك أثناء الحجز أو قبل المغادرة بـ48 ساعة."
   },
   {
-    "question": "Can I change passenger name after booking?",
-    "answer": "Minor corrections are allowed. Complete name change rarely allowed; may require cancellation and rebooking."
+    "question_EN": "Do you offer student discounts?",
+    "answer_EN": "Yes, selected airlines offer student discounts with valid ID proof.",
+    "question_AR": "هل هناك خصومات للطلاب؟",
+    "answer_AR": "نعم، بعض الخطوط توفر خصومات للطلاب مع بطاقة إثبات صالحة."
   },
   {
-    "question": "What is web check-in?",
-    "answer": "Web check-in lets you confirm your seat and get your boarding pass online before reaching the airport."
+    "question_EN": "Are senior citizen discounts available?",
+    "answer_EN": "Yes, passengers aged 60 and above may get discounted fares.",
+    "question_AR": "هل هناك خصومات لكبار السن؟",
+    "answer_AR": "نعم، المسافرون الذين تزيد أعمارهم عن 60 عامًا قد يحصلون على خصومات."
   },
   {
-    "question": "What is a no-show?",
-    "answer": "If a passenger does not board their flight and has not canceled in time, it is considered a no-show and no refund is provided."
+    "question_EN": "Can I upgrade to business class?",
+    "answer_EN": "Yes, you can upgrade using miles or at check-in if seats are available.",
+    "question_AR": "هل يمكنني الترقية إلى درجة رجال الأعمال؟",
+    "answer_AR": "نعم، يمكنك الترقية باستخدام الأميال أو أثناء تسجيل الوصول إذا كانت المقاعد متاحة."
   },
   {
-    "question": "How early should I arrive at the airport?",
-    "answer": "Arrive at least 2 hours before domestic flights and 3 hours before international flights."
+    "question_EN": "What happens if my flight is delayed?",
+    "answer_EN": "Airline will provide updates, compensation, or alternate flight options.",
+    "question_AR": "ماذا يحدث إذا تأخرت رحلتي؟",
+    "answer_AR": "ستقدم شركة الطيران تحديثات وتعويضات أو خيارات رحلة بديلة."
   },
   {
-    "question": "What is PNR number?",
-    "answer": "PNR (Passenger Name Record) is a unique code used to access your booking details."
+    "question_EN": "Will I get food on the flight?",
+    "answer_EN": "Meals depend on airline and ticket type. Budget airlines may charge extra.",
+    "question_AR": "هل سأحصل على وجبة في الرحلة؟",
+    "answer_AR": "يعتمد ذلك على شركة الطيران ونوع التذكرة. الخطوط الاقتصادية قد تتقاضى رسومًا إضافية."
   },
   {
-    "question": "Will I get food on the flight?",
-    "answer": "Complimentary meals are provided on full-service airlines. Low-cost carriers may charge for meals."
+    "question_EN": "What is web check-in?",
+    "answer_EN": "Web check-in lets you confirm your seat and get your boarding pass online.",
+    "question_AR": "ما هو تسجيل الوصول عبر الويب؟",
+    "answer_AR": "يتيح تسجيل الوصول عبر الإنترنت تأكيد المقعد والحصول على بطاقة الصعود."
   },
   {
-    "question": "How to check flight status?",
-    "answer": "You can check status using the airline website, mobile app, or by entering PNR on the flight status page."
+    "question_EN": "Can I cancel my ticket after check-in?",
+    "answer_EN": "Generally, cancellation is not allowed once you have checked in.",
+    "question_AR": "هل يمكنني إلغاء التذكرة بعد تسجيل الوصول؟",
+    "answer_AR": "عادةً لا يسمح بإلغاء التذكرة بعد تسجيل الوصول."
   },
   {
-    "question": "Can I cancel my ticket after check-in?",
-    "answer": "Once checked-in, cancellation is generally not allowed or may incur a high no-show penalty."
+    "question_EN": "What is a no-show?",
+    "answer_EN": "A no-show means the passenger did not cancel and did not board the flight.",
+    "question_AR": "ماذا يعني عدم الحضور (No-show)؟",
+    "answer_AR": "يعني أن المسافر لم يقم بإلغاء الحجز ولم يصعد إلى الطائرة."
   },
   {
-    "question": "What are miles or reward points?",
-    "answer": "Miles are loyalty points earned from flying that can be used for flight booking, upgrades, or extra services."
+    "question_EN": "What is the refund policy?",
+    "answer_EN": "Refund depends on fare rules and cancellation time before departure.",
+    "question_AR": "ما هي سياسة استرداد الأموال؟",
+    "answer_AR": "يعتمد الاسترداد على قواعد التذكرة ووقت الإلغاء قبل المغادرة."
   },
   {
-    "question": "How do I request meal preference?",
-    "answer": "Meal preferences like vegetarian, Jain, or diabetic meals can be selected during booking or up to 24 hours before departure."
+    "question_EN": "How many passengers can I book in a single booking?",
+    "answer_EN": "You can book up to 9 passengers in one booking.",
+    "question_AR": "كم عدد المسافرين الذين يمكنني حجزهم في حجز واحد؟",
+    "answer_AR": "يمكنك الحجز لعدد يصل إلى 9 مسافرين في حجز واحد."
   },
   {
-    "question": "What is the difference between direct, non-stop, and connecting flights?",
-    "answer": "Non-stop flights have no stops, direct flights may stop but no aircraft change, connecting flights require aircraft change."
+    "question_EN": "Do airlines provide hotel stay for long layovers?",
+    "answer_EN": "Some airlines provide hotel stay if layover is more than 8–12 hours.",
+    "question_AR": "هل توفر شركات الطيران فندقًا في حال التوقف الطويل (Layover)؟",
+    "answer_AR": "بعض شركات الطيران توفر إقامة فندقية إذا كان التوقف أكثر من 8-12 ساعة."
   },
   {
-    "question": "How to apply promo codes?",
-    "answer": "Enter promo code on the payment page during booking to get discounts where applicable."
+    "question_EN": "Can I pay in installments?",
+    "answer_EN": "Yes, EMI or installment options are available for eligible cards.",
+    "question_AR": "هل يمكنني الدفع بالتقسيط؟",
+    "answer_AR": "نعم، تتوفر خيارات الدفع بالتقسيط لبطاقات معينة."
   },
   {
-    "question": "Are COVID test or vaccination certificates required?",
-    "answer": "Depends on destination and travel rules. Always check latest travel advisories."
+    "question_EN": "Can I book a one-way ticket?",
+    "answer_EN": "Yes, you can book one-way, round trip, or multi-city tickets.",
+    "question_AR": "هل يمكنني حجز تذكرة ذهاب فقط؟",
+    "answer_AR": "نعم، يمكنك حجز ذهاب فقط أو ذهاب وعودة أو رحلات متعددة الوجهات."
+  },
+  {
+    "question_EN": "How do I claim lost baggage?",
+    "answer_EN": "Report at the airline's baggage claim desk immediately with your luggage tag.",
+    "question_AR": "كيف أبلغ عن فقدان الأمتعة؟",
+    "answer_AR": "قم بالإبلاغ فورًا في مكتب استلام الأمتعة الخاص بشركة الطيران مع بطاقة الأمتعة."
+  },
+  {
+    "question_EN": "Can I carry power banks on flights?",
+    "answer_EN": "Power banks up to 100Wh are allowed only in cabin baggage.",
+    "question_AR": "هل يمكنني حمل بنك الطاقة (Power Bank) على الطائرة؟",
+    "answer_AR": "يسمح ببنوك الطاقة حتى 100Wh في حقيبة اليد فقط."
+  },
+  {
+    "question_EN": "How do I request a special meal?",
+    "answer_EN": "You can choose meal preference during booking or 48 hours before departure.",
+    "question_AR": "كيف أطلب وجبة خاصة؟",
+    "answer_AR": "يمكنك اختيار نوع الوجبة أثناء الحجز أو قبل المغادرة بـ48 ساعة."
+  },
+  {
+    "question_EN": "Can I bring my wheelchair?",
+    "answer_EN": "Yes, personal wheelchairs are allowed and can be checked in for free.",
+    "question_AR": "هل يمكنني إحضار كرسيي المتحرك؟",
+    "answer_AR": "نعم، يسمح بالكراسي المتحركة الشخصية مجانًا."
+  },
+  {
+    "question_EN": "What are reward points or miles?",
+    "answer_EN": "Miles are loyalty points earned from flying which can be used for discounts or upgrades.",
+    "question_AR": "ما هي نقاط المكافآت (Miles)؟",
+    "answer_AR": "هي نقاط ولاء تُكتسب من السفر يمكن استخدامها للخصم أو الترقية."
+  },
+  {
+    "question_EN": "Can I travel without printing the ticket?",
+    "answer_EN": "Yes, an e-ticket on your phone is enough in most cases.",
+    "question_AR": "هل يجب طباعة التذكرة للسفر؟",
+    "answer_AR": "لا، التذكرة الإلكترونية على هاتفك تكفي في معظم الحالات."
+  },
+  {
+    "question_EN": "Can I book group tickets?",
+    "answer_EN": "Yes, group booking is available for more than 9 passengers.",
+    "question_AR": "هل يمكنني حجز تذاكر لمجموعة؟",
+    "answer_AR": "نعم، يتوفر حجز المجموعات لأكثر من 9 ركاب."
+  },
+  {
+    "question_EN": "Do I need COVID vaccination for travel?",
+    "answer_EN": "It depends on your destination’s rules and airline policies.",
+    "question_AR": "هل أحتاج إلى شهادة لقاح كورونا للسفر؟",
+    "answer_AR": "يعتمد على وجهتك وسياسة شركة الطيران."
+  },
+  {
+    "question_EN": "What should I do if I miss my flight?",
+    "answer_EN": "Contact customer support immediately to check rebooking options.",
+    "question_AR": "ماذا أفعل إذا فاتتني رحلتي؟",
+    "answer_AR": "قم بالتواصل مع دعم العملاء فورًا لمعرفة خيارات إعادة الحجز."
+  },
+  {
+    "question_EN": "Can I get compensation for a canceled flight?",
+    "answer_EN": "Compensation depends on airline policy and travel regulations.",
+    "question_AR": "هل يمكنني الحصول على تعويض عن رحلة ملغاة؟",
+    "answer_AR": "يعتمد التعويض على سياسة شركة الطيران واللوائح المحلية."
+  },
+  {
+    "question_EN": "What if my connecting flight is delayed?",
+    "answer_EN": "Airline may arrange accommodation, meals, or rebooking.",
+    "question_AR": "ماذا يحدث إذا تأخرت رحلتي المتصلة؟",
+    "answer_AR": "قد توفر شركة الطيران إقامة أو وجبات أو إعادة حجز."
+  },
+  {
+    "question_EN": "Can I carry duty-free items on board?",
+    "answer_EN": "Yes, duty-free liquids must be sealed in tamper-proof bags with a receipt.",
+    "question_AR": "هل يمكنني حمل مشتريات السوق الحرة في الطائرة؟",
+    "answer_AR": "نعم، يجب أن تكون السوائل مغلقة في أكياس آمنة مع إيصال."
+  },
+  {
+    "question_EN": "What is a layover?",
+    "answer_EN": "A layover is a stop between connecting flights, usually for less than 24 hours.",
+    "question_AR": "ما هو التوقف (Layover)؟",
+    "answer_AR": "هو توقف بين الرحلات المتصلة، عادةً لمدة أقل من 24 ساعة."
+  },
+  {
+    "question_EN": "What is a connecting flight?",
+    "answer_EN": "A flight where you need to change planes at an intermediate airport.",
+    "question_AR": "ما هي الرحلة المتصلة؟",
+    "answer_AR": "هي رحلة تتطلب تغيير الطائرة في مطار وسيط."
+  },
+  {
+    "question_EN": "What is visa on arrival?",
+    "answer_EN": "It allows travelers to obtain a visa upon landing in a foreign country.",
+    "question_AR": "ما هي تأشيرة الوصول؟",
+    "answer_AR": "هي تأشيرة يحصل عليها المسافر عند وصوله لبلد أجنبي."
+  },
+  {
+    "question_EN": "Can I request a vegetarian or halal meal?",
+    "answer_EN": "Yes, you can select special meals while booking or before check-in.",
+    "question_AR": "هل يمكنني طلب وجبة نباتية أو حلال؟",
+    "answer_AR": "نعم، يمكنك طلب وجبة خاصة أثناء الحجز أو قبل تسجيل الوصول."
+  },
+  {
+    "question_EN": "Can I travel with a musical instrument?",
+    "answer_EN": "Yes, small instruments can be carried in cabin. Larger ones must be checked in.",
+    "question_AR": "هل يمكنني السفر مع آلة موسيقية؟",
+    "answer_AR": "نعم، يمكن حمل الآلات الصغيرة في المقصورة، أما الكبيرة فتوضع في الأمتعة المشحونة."
+  },
+  {
+    "question_EN": "What is priority boarding?",
+    "answer_EN": "It allows passengers to board the plane earlier than others.",
+    "question_AR": "ما هو الصعود المبكر (Priority Boarding)؟",
+    "answer_AR": "هو السماح للركاب بالصعود إلى الطائرة قبل الآخرين."
+  },
+  {
+    "question_EN": "Do I need travel insurance?",
+    "answer_EN": "It is not mandatory but highly recommended for international travel.",
+    "question_AR": "هل أحتاج إلى تأمين سفر؟",
+    "answer_AR": "ليس إلزاميًا لكنه موصى به بشدة عند السفر الدولي."
+  },
+  {
+    "question_EN": "What if I entered wrong passport details?",
+    "answer_EN": "Contact customer support immediately for correction.",
+    "question_AR": "ماذا أفعل إذا أدخلت بيانات جواز السفر بشكل خاطئ؟",
+    "answer_AR": "قم بالتواصل مع دعم العملاء فورًا لتصحيح البيانات."
+  },
+  {
+    "question_EN": "How do I apply promo codes?",
+    "answer_EN": "Enter promo code on the payment page during booking.",
+    "question_AR": "كيف يمكنني استخدام رمز الخصم؟",
+    "answer_AR": "أدخل رمز الخصم في صفحة الدفع أثناء الحجز."
+  },
+  {
+    "question_EN": "Can I buy travel insurance during flight booking?",
+    "answer_EN": "Yes, travel insurance is available as an optional add-on while booking.",
+    "question_AR": "هل يمكنني شراء تأمين السفر أثناء الحجز؟",
+    "answer_AR": "نعم، يتوفر تأمين السفر كخيار إضافي أثناء الحجز."
+  },
+  {
+    "question_EN": "Can I board with an expired passport?",
+    "answer_EN": "No, passport must be valid for at least 6 months for international travel.",
+    "question_AR": "هل يمكنني السفر بجواز منتهي الصلاحية؟",
+    "answer_AR": "لا، يجب أن يكون جواز السفر صالحًا لمدة لا تقل عن 6 أشهر للسفر الدولي."
+  },
+  {
+    "question_EN": "Can I get refund if I cancel within 24 hours of booking?",
+    "answer_EN": "Yes, some airlines offer full refund if cancelled within 24 hours.",
+    "question_AR": "هل يمكنني استرداد كامل المبلغ إذا ألغيت خلال 24 ساعة من الحجز؟",
+    "answer_AR": "نعم، بعض الخطوط توفر استردادًا كاملًا إذا تم الإلغاء خلال 24 ساعة."
+  },
+  {
+    "question_EN": "What is the difference between cabin baggage and checked baggage?",
+    "answer_EN": "Cabin baggage is carried with you on board, checked baggage is stored in aircraft cargo.",
+    "question_AR": "ما الفرق بين حقيبة اليد والأمتعة المشحونة؟",
+    "answer_AR": "حقيبة اليد تُحمل معك على الطائرة، بينما الأمتعة المشحونة تُخزن في شحنة الطائرة."
+  },
+  {
+    "question_EN": "Can I travel without printing the boarding pass?",
+    "answer_EN": "Yes, mobile boarding pass is accepted by most airlines.",
+    "question_AR": "هل يمكنني السفر بدون طباعة بطاقة الصعود؟",
+    "answer_AR": "نعم، معظم شركات الطيران تقبل بطاقة الصعود الإلكترونية على الهاتف."
+  },
+  {
+    "question_EN": "Can I travel with expired visa?",
+    "answer_EN": "No, visa must be valid for the duration of your travel.",
+    "question_AR": "هل يمكنني السفر بتأشيرة منتهية؟",
+    "answer_AR": "لا، يجب أن تكون التأشيرة سارية طوال فترة السفر."
+  },
+  {
+    "question_EN": "Can children travel alone?",
+    "answer_EN": "Yes, airlines offer unaccompanied minor services for children aged 5–14.",
+    "question_AR": "هل يمكن للأطفال السفر وحدهم؟",
+    "answer_AR": "نعم، توفر شركات الطيران خدمة القاصر غير المصحوب للأعمار من 5 إلى 14 سنة."
+  },
+  {
+    "question_EN": "What is unaccompanied minor service?",
+    "answer_EN": "It is a service to assist children traveling alone.",
+    "question_AR": "ما هي خدمة القاصر غير المصحوب؟",
+    "answer_AR": "هي خدمة لمساعدة الأطفال الذين يسافرون دون مرافق."
+  },
+  {
+    "question_EN": "Can I travel without a return ticket?",
+    "answer_EN": "Some countries require proof of return or onward travel.",
+    "question_AR": "هل يمكنني السفر بدون تذكرة عودة؟",
+    "answer_AR": "بعض الدول تتطلب إثبات تذكرة العودة أو متابعة السفر."
+  },
+  {
+    "question_EN": "What is immigration?",
+    "answer_EN": "Immigration is the border control process for international travelers.",
+    "question_AR": "ما هو الجوازات (Immigration)؟",
+    "answer_AR": "هو عملية فحص المسافرين عند دخول أو مغادرة دولة."
+  },
+  {
+    "question_EN": "Can I book a flight without passport details?",
+    "answer_EN": "Yes, for domestic flights. Passport is required for international flights.",
+    "question_AR": "هل يمكنني حجز رحلة بدون بيانات جواز السفر؟",
+    "answer_AR": "نعم، للرحلات الداخلية فقط. الرحلات الدولية تتطلب جواز السفر."
+  },
+  {
+    "question_EN": "How do I know if my ticket is confirmed?",
+    "answer_EN": "A confirmed ticket will have a valid PNR and confirmed status.",
+    "question_AR": "كيف أعرف أن تذكرتي مؤكدة؟",
+    "answer_AR": "ستحتوي التذكرة المؤكدة على رقم PNR وحالة تأكيد نشطة."
+  },
+  {
+    "question_EN": "What if my baggage is damaged?",
+    "answer_EN": "Report to airline baggage desk before leaving airport.",
+    "question_AR": "ماذا أفعل إذا تضررت أمتعتي؟",
+    "answer_AR": "أبلغ مكتب الأمتعة الخاص بشركة الطيران قبل مغادرة المطار."
+  },
+  {
+    "question_EN": "What is a transit visa?",
+    "answer_EN": "A visa that allows you to stay temporarily while connecting flights.",
+    "question_AR": "ما هي تأشيرة الترانزيت؟",
+    "answer_AR": "هي تأشيرة تسمح لك بالبقاء مؤقتًا أثناء الرحلات المتصلة."
+  },
+  {
+    "question_EN": "Can I use my miles to book tickets for others?",
+    "answer_EN": "Yes, most airlines allow booking for family or friends using miles.",
+    "question_AR": "هل يمكنني استخدام الأميال لحجز تذاكر للآخرين؟",
+    "answer_AR": "نعم، معظم شركات الطيران تسمح بالحجز للعائلة أو الأصدقاء باستخدام الأميال."
+  },
+  {
+    "question_EN": "Can I get lounge access?",
+    "answer_EN": "Lounge access is available for business class, elite members, or via paid passes.",
+    "question_AR": "هل يمكنني دخول صالة المطار؟",
+    "answer_AR": "يمكن دخول الصالة لمسافري درجة رجال الأعمال، الأعضاء المميزين، أو عبر شراء بطاقة دخول."
+  },
+  {
+    "question_EN": "Can I buy priority boarding?",
+    "answer_EN": "Yes, priority services are available for purchase during booking.",
+    "question_AR": "هل يمكنني شراء خدمة الصعود المبكر؟",
+    "answer_AR": "نعم، يمكن شراء خدمة الصعود المبكر أثناء الحجز."
+  },
+  {
+    "question_EN": "Can I travel with emergency travel document?",
+    "answer_EN": "Yes, if accepted by destination immigration authority.",
+    "question_AR": "هل يمكنني السفر بوثيقة سفر طارئة؟",
+    "answer_AR": "نعم، إذا قبلتها سلطات الهجرة في الوجهة."
+  },
+  {
+    "question_EN": "Can airlines deny boarding?",
+    "answer_EN": "Boarding can be denied due to overbooking, missing documents, or safety reasons.",
+    "question_AR": "هل يمكن أن ترفض شركة الطيران السماح لي بالصعود؟",
+    "answer_AR": "نعم، قد يتم منع الصعود بسبب الحجز الزائد، نقص الوثائق، أو لأسباب أمنية."
+  },
+  {
+    "question_EN": "What is airport tax?",
+    "answer_EN": "Airport tax is a fee charged for using airport facilities.",
+    "question_AR": "ما هو رسم المطار؟",
+    "answer_AR": "هو رسم يتم تحصيله مقابل استخدام مرافق المطار."
+  },
+  {
+    "question_EN": "Can I get refund if airline cancels flight?",
+    "answer_EN": "Yes, you are entitled to a refund or free rebooking.",
+    "question_AR": "هل يمكنني استرداد المبلغ إذا ألغت شركة الطيران الرحلة؟",
+    "answer_AR": "نعم، لك الحق في استرداد المبلغ أو إعادة الحجز مجانًا."
+  },
+  {
+    "question_EN": "What is a valid ID for domestic flights?",
+    "answer_EN": "Aadhaar card, passport, driver's license, or government ID is accepted.",
+    "question_AR": "ما هي الهوية المقبولة للرحلات الداخلية؟",
+    "answer_AR": "بطاقة الهوية، جواز السفر، رخصة القيادة أو أي هوية حكومية مقبولة."
+  },
+  {
+    "question_EN": "What is airport security screening?",
+    "answer_EN": "It is a process to check passengers and baggage for prohibited items.",
+    "question_AR": "ما هو فحص أمن المطار؟",
+    "answer_AR": "هي عملية فحص الركاب والأمتعة للكشف عن الأشياء الممنوعة."
+  },
+  {
+    "question_EN": "Can I carry liquids in cabin baggage?",
+    "answer_EN": "Yes, up to 100ml per item in a transparent bag.",
+    "question_AR": "هل يمكنني حمل سوائل في حقيبة اليد؟",
+    "answer_AR": "نعم، حتى 100 مل لكل عبوة داخل حقيبة شفافة."
+  },
+  {
+    "question_EN": "Can I travel with my expired visa?",
+    "answer_EN": "No, an expired visa is not valid.",
+    "question_AR": "هل يمكنني السفر بتأشيرة منتهية؟",
+    "answer_AR": "لا، التأشيرة المنتهية غير صالحة للسفر."
+  },
+  {
+    "question_EN": "Can flights be checked using WhatsApp?",
+    "answer_EN": "Some airlines provide updates on WhatsApp with your PNR.",
+    "question_AR": "هل يمكنني معرفة حالة الرحلة عبر واتساب؟",
+    "answer_AR": "بعض شركات الطيران توفر التحديثات عبر واتساب باستخدام رقم الحجز."
   }
 ]
