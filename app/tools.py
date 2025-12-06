@@ -79,14 +79,15 @@ def rag_search(query: str):
     return None
 
 # -------------------------------
-# FIRESTORE SEARCH VIA .NET API
+# ✅ ✅ ✅ NULL-SAFE FLIGHT SEARCH (CRASH FIX)
 # -------------------------------
 async def search_flights(args: dict):
     try:
         url = f"{FLIGHT_API_BASE_URL}/flights/search"
+
         params = {
-            "from": args.get("from_city"),
-            "to": args.get("to_city"),
+            "from": args.get("from_city") or "",
+            "to": args.get("to_city") or "",
             "lang": "en"
         }
 
