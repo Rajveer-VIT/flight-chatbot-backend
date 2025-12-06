@@ -22,9 +22,7 @@ async def websocket_chat(websocket: WebSocket, user_id: str):
     while True:
         try:
             text = await websocket.receive_text()
-
             response = await chatbot_reply(text, user_id)
-
             await websocket.send_json(response)
 
         except Exception as e:
