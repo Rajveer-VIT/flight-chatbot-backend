@@ -1,4 +1,4 @@
-from fastapi import FastAPI, WebSocket
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from app.agents import chatbot_reply
 
@@ -19,13 +19,21 @@ def home():
 async def websocket_chat(websocket: WebSocket, user_id: str):
     await websocket.accept()
 
-    while True:
-        try:
+    try:
+        while True:
             text = await websocket.receive_text()
             response = await chatbot_reply(text, user_id)
             await websocket.send_json(response)
 
-        except Exception as e:
-            print("WebSocket Error:", e)
-            await websocket.close()
-            break
+    except WebSocketDisconnect:
+        print(f"✅ Client disconnected: {user_id}")
+
+    except Exception as e:
+        print("❌ WebSocket Error:", e)
+
+    finally:
+        try:
+            if websocket.client_state.name == "CONNECTED":
+                await websocket.close()
+        except:
+            pass
