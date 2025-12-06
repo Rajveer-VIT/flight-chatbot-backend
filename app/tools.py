@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 FAQ_PATH = os.path.join(BASE_DIR, "data", "faqs.json")
 
 # -------------------------------
-# 🔹 EMBEDDING (SAFE)
+# EMBEDDING
 # -------------------------------
 def create_embedding(text: str):
     try:
@@ -16,41 +16,38 @@ def create_embedding(text: str):
             model="text-embedding-3-large",
             input=text
         )
-        return e.data[0].embedding  # ✅ RETURN LIST (NOT numpy)
+        return e.data[0].embedding
     except Exception as e:
         print("❌ EMBEDDING ERROR:", e)
         return []
 
 # -------------------------------
-# 🔹 LOAD FAQ + CACHE EMBEDDINGS
+# LOAD FAQ + SAVE EMBEDDINGS
 # -------------------------------
 with open(FAQ_PATH, "r", encoding="utf-8") as f:
     FAQ_DATA = json.load(f)
 
 updated = False
-
 for faq in FAQ_DATA:
     if "embedding_en" not in faq:
         faq["embedding_en"] = create_embedding(faq["question_EN"])
         updated = True
-
     if "embedding_ar" not in faq:
         faq["embedding_ar"] = create_embedding(faq["question_AR"])
         updated = True
 
-# ✅ SAVE EMBEDDINGS BACK TO FILE (VERY IMPORTANT)
 if updated:
     with open(FAQ_PATH, "w", encoding="utf-8") as f:
         json.dump(FAQ_DATA, f, ensure_ascii=False, indent=2)
 
 # -------------------------------
-# 🔹 LANGUAGE DETECT
+# LANGUAGE
 # -------------------------------
-def detect_language(text: str):
+def detect_language(text):
     return "ar" if re.search(r"[\u0600-\u06FF]", text) else "en"
 
 # -------------------------------
-# 🔹 RAG SEARCH (OPTIMIZED)
+# RAG SEARCH
 # -------------------------------
 def rag_search(query: str):
     lang = detect_language(query)
@@ -82,12 +79,11 @@ def rag_search(query: str):
     return None
 
 # -------------------------------
-# 🔹 CLOUD RUN FLIGHT SEARCH
+# FIRESTORE SEARCH VIA .NET API
 # -------------------------------
 async def search_flights(args: dict):
     try:
         url = f"{FLIGHT_API_BASE_URL}/flights/search"
-
         params = {
             "from": args.get("from_city"),
             "to": args.get("to_city"),
@@ -107,7 +103,7 @@ async def search_flights(args: dict):
         return {"error": "Flight service unavailable"}
 
 # -------------------------------
-# 🔹 MOCK BOOKING (SAFE)
+# MOCK BOOKING
 # -------------------------------
 async def book_flight(args: dict):
     try:
