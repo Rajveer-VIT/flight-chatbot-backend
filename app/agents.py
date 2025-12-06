@@ -61,8 +61,15 @@ async def chatbot_reply(user_message: str, user_id: str):
                 "source": "Greeting"
             }
 
-        # ✅ 2️⃣ MANUAL CITY EXTRACTION (ROBUST)
-        manual_match = re.search(r"from\s+(.+?)\s+to\s+(.+)", text)
+        # ✅ ✅ ✅ 2️⃣ SMART CITY EXTRACTION (ALL CASES FIXED)
+        # Works for:
+        # "from jaipur to doha"
+        # "jaipur to doha"
+        # "find flight for jaipur to doha"
+        manual_match = re.search(
+            r"(?:from|for)?\s*([a-zA-Z\s]+?)\s+(?:to)\s+([a-zA-Z\s]+)",
+            text
+        )
 
         if manual_match:
             from_city = manual_match.group(1).strip()
@@ -97,69 +104,17 @@ async def chatbot_reply(user_message: str, user_id: str):
                 "source": "RAG"
             }
 
-        # ✅ 5️⃣ OPENAI TOOL FALLBACK (SAFE)
-        tools = [
-            {
-                "type": "function",
-                "function": {
-                    "name": "search_flights",
-                    "description": "Search flights using from and to cities",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {
-                            "from_city": {"type": "string"},
-                            "to_city": {"type": "string"}
-                        },
-                        "required": ["from_city", "to_city"]
-                    }
-                }
-            },
-            {
-                "type": "function",
-                "function": {
-                    "name": "book_flight",
-                    "description": "Book a flight using flight ID and passenger name",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {
-                            "flight_id": {"type": "integer"},
-                            "passenger_name": {"type": "string"}
-                        },
-                        "required": ["flight_id", "passenger_name"]
-                    }
-                }
-            }
-        ]
-
+        # ✅ 5️⃣ OPENAI FALLBACK (SAFE – NO TOOL CRASH)
         completion = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": PERSONA_MESSAGE},
                 {"role": "user", "content": user_message}
-            ],
-            tools=tools,
-            tool_choice="auto"
+            ]
         )
 
-        msg = completion.choices[0].message
-
-        # ✅ 6️⃣ SAFE TOOL HANDLER
-        if hasattr(msg, "tool_calls") and msg.tool_calls:
-            tool_call = msg.tool_calls[0]
-            tool_name = tool_call.function.name
-            args = json.loads(tool_call.function.arguments or "{}")
-
-            if tool_name == "search_flights":
-                result = await search_flights(args)
-                return {"answer": result, "source": "AI-Tool"}
-
-            if tool_name == "book_flight":
-                result = await book_flight(args)
-                return {"answer": result, "source": "Booking"}
-
-        # ✅ 7️⃣ FINAL GPT FALLBACK
         return {
-            "answer": msg.content or "Please tell me your travel route.",
+            "answer": completion.choices[0].message.content or "Please tell me your travel route.",
             "source": "AI"
         }
 
