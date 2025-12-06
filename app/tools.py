@@ -13,7 +13,6 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 FAQ_PATH = os.path.join(BASE_DIR, "data", "faqs.json")
 
-
 # ================================
 # 🔹 Create Embedding
 # ================================
@@ -24,34 +23,19 @@ def create_embedding(text: str):
     )
     return np.array(e.data[0].embedding)
 
-
 # Load FAQ
 with open(FAQ_PATH, "r", encoding="utf-8") as f:
     FAQ_DATA = json.load(f)
 
-
-# ================================
-# 🔹 Precompute Embeddings for EN & AR
-# ================================
 for faq in FAQ_DATA:
     if "embedding_en" not in faq:
         faq["embedding_en"] = create_embedding(faq["question_EN"])
     if "embedding_ar" not in faq:
         faq["embedding_ar"] = create_embedding(faq["question_AR"])
 
-
-# ================================
-# 🔹 Detect Language (Simple Arabic Check)
-# ================================
 def detect_language(text):
-    if re.search("[\u0600-\u06FF]", text):
-        return "ar"
-    return "en"
+    return "ar" if re.search("[\u0600-\u06FF]", text) else "en"
 
-
-# ================================
-# 🔹 Smart RAG Search (EN/AR Auto)
-# ================================
 def rag_search(query: str):
     lang = detect_language(query)
     query_emb = create_embedding(query)
@@ -74,28 +58,30 @@ def rag_search(query: str):
         return best_answer
     elif best_score >= 0.70:
         return best_answer + ("\n\nℹ️ هذا أقرب جواب متاح." if lang == "ar" else "\n\nℹ️ This answer is based on closest available information.")
-    else:
-        return None
+    return None
 
-
-# =======================
-# Flight Search
-# =======================
+# ✅ ✅ ✅ FIXED SEARCH (CLOUD RUN READY)
 async def search_flights(args: dict):
-    url = f"{FLIGHT_API_BASE_URL}/flights/search?from={args['from_city']}&to={args['to_city']}"
+    url = f"{FLIGHT_API_BASE_URL}/flights/search"
+
+    params = {
+        "from": args["from_city"],
+        "to": args["to_city"],
+        "lang": "en"
+    }
+
+    print("🌐 API CALL:", url, params)
 
     async with httpx.AsyncClient() as client:
-        response = await client.get(url)
+        response = await client.get(url, params=params)
 
     if response.status_code != 200:
+        print("❌ API ERROR:", response.text)
         return {"error": "No flights found"}
 
     return {"flights": response.json()}
 
-
-# =======================
-# Flight Booking
-# =======================
+# ✅ ✅ ✅ BOOKING (LOCAL MOCK)
 async def book_flight(args: dict):
     date_code = datetime.datetime.now().strftime("%d%m%y")
     pnr = f"FL-{date_code}-{random.randint(10000, 99999)}"
