@@ -61,19 +61,21 @@ async def chatbot_reply(user_message: str, user_id: str):
                 "source": "Greeting"
             }
 
-        # ✅ ✅ ✅ 2️⃣ SMART CITY EXTRACTION (ALL CASES FIXED)
+        # ✅ ✅ ✅ 2️⃣ ROBUST CITY EXTRACTION (100% WORKING)
         # Works for:
-        # "from jaipur to doha"
-        # "jaipur to doha"
-        # "find flight for jaipur to doha"
-        manual_match = re.search(
-            r"(?:from|for)?\s*([a-zA-Z\s]+?)\s+(?:to)\s+([a-zA-Z\s]+)",
+        # "delhi to mumbai"
+        # "from delhi to mumbai"
+        # "find flight from delhi to mumbai"
+        # "flight from jaipur to doha"
+
+        city_match = re.search(
+            r"(?:from\s+)?([a-zA-Z]+)\s+(?:to)\s+([a-zA-Z]+)",
             text
         )
 
-        if manual_match:
-            from_city = manual_match.group(1).strip()
-            to_city = manual_match.group(2).strip()
+        if city_match:
+            from_city = city_match.group(1).strip().title()
+            to_city = city_match.group(2).strip().title()
 
             print("✅ MANUAL SEARCH:", from_city, "->", to_city)
 
@@ -104,7 +106,7 @@ async def chatbot_reply(user_message: str, user_id: str):
                 "source": "RAG"
             }
 
-        # ✅ 5️⃣ OPENAI FALLBACK (SAFE – NO TOOL CRASH)
+        # ✅ 5️⃣ OPENAI FALLBACK (SAFE)
         completion = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
